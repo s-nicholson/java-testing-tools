@@ -17,6 +17,8 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.28'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.28'
 
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.1'
+
     implementation 'com.h2database:h2:2.2.220'
     implementation 'org.postgresql:postgresql:42.6.0'
 
@@ -74,6 +76,7 @@ pitest {
     junit5PluginVersion = '1.2.1'
     mutationThreshold = 90
     mutators = ['ALL']
+    targetClasses = ['com.example.testing.pitest.*']
 }
 
 check.dependsOn 'pitest'
