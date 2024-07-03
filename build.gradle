@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'jacoco'
     id 'info.solidsoft.pitest' version '1.15.0'
+    id "io.freefair.lombok" version "8.6"
 }
 
 group = 'com.example'
