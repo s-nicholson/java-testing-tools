@@ -34,11 +34,11 @@ Mocking for network calls (also a good way to test things like json deserialisat
 
 BDD testing, allows you to write executable spec which is readable for non-techies.
 
-### H2 DB // todo
+### H2 DB
 
 In-memory DB which you can plug into your ORM to avoid needing a real one.
 
-### TestContainers // todo
+### TestContainers
 
 Containers for your dependencies so you can run real services in your integration tests.
 
