@@ -4,15 +4,17 @@ _Disclaimer: I am in no way an expert, this whole project was just a playground 
 
 ## Tools
 
-### JUnit 5
+### [JUnit 5](https://junit.org/junit5/)
 
 Latest and greatest Java testing with lots of nifty features.
 
-### Mockito
+### [Mockito](https://github.com/mockito/mockito)
 
 Standard mocking library for easy test doubles.
 
-### AssertJ
+See [the `mocking` package](./src/test/java/com/example/testing/mocking).
+
+### [AssertJ](https://assertj.github.io/doc/)
 
 More fluid assertions.
 
@@ -22,37 +24,51 @@ assertThat(x).isEqualTo(y);
 assertThat(list).contains("a", "b", "c");
 ```
 
-### Awaitlity
+### [Awaitlity](https://github.com/awaitility/awaitility)
 
 Making it easier to test async code.
 
-### WireMock
+See [the `async` package](./src/test/java/com/example/testing/async).
+
+### [WireMock](https://wiremock.org/)
 
 Mocking for network calls (also a good way to test things like json deserialisation that lives in annotations).
 
-### Cucumber
+See [the `wiremock` package](./src/test/java/com/example/testing/wiremock).
+
+### [Cucumber](https://github.com/cucumber/cucumber-jvm)
 
 BDD testing, allows you to write executable spec which is readable for non-techies.
 
-### H2 DB
+See [the `features` dir](./src/test/resources/features) for the feature files and [the `bdd` package](./src/test/java/com/example/testing/bdd) for the step definitions and test runner.
+
+### [H2 DB](https://www.h2database.com/html/main.html)
 
 In-memory DB which you can plug into your ORM to avoid needing a real one.
 
-### TestContainers
+See [the `db` package](./src/test/java/com/example/testing/db).
+
+### [TestContainers](https://testcontainers.com/)
 
 Containers for your dependencies so you can run real services in your integration tests.
 
-### JaCoCo
+Also in [the `db` package](./src/test/java/com/example/testing/db) (but you can do much more with it).
+
+### [JaCoCo](https://www.eclemma.org/jacoco/)
 
 Code coverage stats and enforcing - fails the build if coverage is too low.
 
-Reports:
+The generated reports will live here after you run `gradle clean build`:
 
 - [Results](build/reports/tests/test/index.html)
 - [Coverage](build/jacocoHtml/index.html)
 
-### PITest
+See also some relevant config in `build.gradle`.
+
+### [PITest](https://pitest.org/)
 
 Mutation testing to get **_more_** confidence on your coverage.
 
-- [Report](build/reports/pitest/index.html)
+The generated report will live [here](build/reports/pitest/index.html) after you run `gradle clean build`.
+
+See [the `pitest` package](./src/test/java/com/example/testing/pitest) and some relevant config in `build.gradle`.
