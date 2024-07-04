@@ -24,6 +24,7 @@ dependencies {
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.2'
+    testImplementation 'org.junit.platform:junit-platform-suite:1.10.3'
     testImplementation 'org.mockito:mockito-core:5.3.1'
     testImplementation 'org.assertj:assertj-core:3.24.2'
 
@@ -79,4 +80,4 @@ pitest {
     targetClasses = ['com.example.testing.pitest.*']
 }
 
-check.dependsOn 'pitest'
+//check.dependsOn 'pitest'

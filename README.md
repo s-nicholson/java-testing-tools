@@ -30,7 +30,7 @@ Making it easier to test async code.
 
 Mocking for network calls (also a good way to test things like json deserialisation that lives in annotations).
 
-### Cucumber // todo
+### Cucumber
 
 BDD testing, allows you to write executable spec which is readable for non-techies.
 
