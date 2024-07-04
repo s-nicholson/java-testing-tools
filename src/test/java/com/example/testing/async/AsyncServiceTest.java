@@ -1,6 +1,7 @@
 package com.example.testing.async;
 
 import lombok.SneakyThrows;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -14,9 +15,29 @@ class AsyncServiceTest {
 
     @Nested
     class WithoutAwaitility {
+        /**
+         * This test is flakey because it asserts on the result of some async
+         * processing, sometimes it might pass and other times it will fail.
+         */
+        @Disabled
         @Test
         @SneakyThrows
         void async_thing_is_done() {
+            asyncService.doSomethingAsync();
+
+            assertTrue(asyncService.isDone());
+        }
+
+        /**
+         * This test is less likely to flake because we've introduced a fixed sleep.
+         * Fine here because we *know* the maximum wait of the async code, but in
+         * the real world this won't always be possible.
+         *
+         * Also, it can add a lot of unnecessary waiting to your tests.
+         */
+        @Test
+        @SneakyThrows
+        void async_thing_is_done_wait() {
             asyncService.doSomethingAsync();
 
             Thread.sleep(10_000L);
@@ -27,6 +48,11 @@ class AsyncServiceTest {
 
     @Nested
     class WithAwaitility {
+        /**
+         * Awaitility gives us a flexible way of asserting on our async code.
+         * We could write something like this ourselves with a loop and sleeps, but
+         * this is much cleaner.
+         */
         @Test
         void async_thing_is_done() {
             asyncService.doSomethingAsync();

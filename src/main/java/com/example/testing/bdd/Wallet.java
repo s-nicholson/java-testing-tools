@@ -5,6 +5,10 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.StandardException;
 
+/**
+ * Super simple financial transaction type class.
+ * In no way is this the right way to do this in the real world.
+ */
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Getter

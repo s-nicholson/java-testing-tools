@@ -12,9 +12,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 class DbClientTest {
+    /**
+     * H@ in-memory DB for speedy tests against a basic SQL DB.
+     * Doesn't support everything your real DB does, so you may not be able to
+     * test everything.
+     */
     @Nested
     class WithH2 {
-
         @Test
         void can_fetch_users() {
             var initScriptPsth = getClass().getResource("/data.sql").getPath();
@@ -33,6 +37,11 @@ class DbClientTest {
         }
     }
 
+    /**
+     * Using a real database in docker to test our DB code.
+     * Slower and has some issues with certain CI setups, but useful if you need to
+     * test against the real thing.
+     */
     @Nested
     class WithTestContainers {
         private static JdbcDatabaseContainer postgreSQLContainer;

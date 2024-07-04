@@ -3,6 +3,9 @@ package com.example.testing.mocking;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.StandardException;
 
+/**
+ * Simple class with some constructor injected dependencies to demonstrate the benefit of isolation using mocking.
+ */
 @RequiredArgsConstructor
 public class Thing {
     private final Checker checker;

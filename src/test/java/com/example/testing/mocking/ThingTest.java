@@ -12,6 +12,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+/**
+ * Demoing the difference between test doubles created using mockito and
+ * the more classical ones which are just created in the test class.
+ * (This is easy enough with small interfaces, but can get tedious)
+ */
 public class ThingTest {
     @Nested
     class WithoutMockito {

@@ -9,6 +9,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Simple DB client class, using JDBC to avoid cluttering the code
+ * under test with persistence library things.
+ */
 @RequiredArgsConstructor
 public class DbClient {
     private final String connectionString;

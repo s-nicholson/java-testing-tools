@@ -3,6 +3,7 @@ package com.example.testing.wiremock;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 
 import java.net.URI;
@@ -11,15 +12,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.List;
 
+@RequiredArgsConstructor
 public class ApiClient {
     private static final ObjectMapper objectMapper = new ObjectMapper();
     private final String baseUrl;
     private final HttpClient client;
-
-    public ApiClient(String baseUrl) {
-        this.baseUrl = baseUrl;
-        client = HttpClient.newHttpClient();
-    }
 
     @SneakyThrows
     public List<Item> getItems() {
