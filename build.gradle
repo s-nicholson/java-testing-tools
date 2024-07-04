@@ -76,7 +76,7 @@ configurations {
 pitest {
     junit5PluginVersion = '1.2.1'
     mutationThreshold = 90
-    mutators = ['ALL']
+//    mutators = ['ALL']
     targetClasses = ['com.example.testing.pitest.*']
 }
 

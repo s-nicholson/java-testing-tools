@@ -1,6 +1,7 @@
 package com.example.testing.pitest;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Disabled;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -25,6 +26,15 @@ class GoldilocksTest {
     @Test
     void just_right() {
         assertThat(goldilocks.likesPorridge(50))
+                .isTrue();
+    }
+
+    @Disabled
+    @Test
+    void boundary_fix() {
+        assertThat(goldilocks.likesPorridge(40))
                 .isFalse();
+        assertThat(goldilocks.likesPorridge(60))
+                .isTrue();
     }
 }
