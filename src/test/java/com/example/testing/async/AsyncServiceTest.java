@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import java.time.Duration;
 
 import static org.awaitility.Awaitility.await;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class AsyncServiceTest {
     private static final AsyncService asyncService = new AsyncService();
@@ -21,7 +21,6 @@ class AsyncServiceTest {
          */
         @Disabled
         @Test
-        @SneakyThrows
         void async_thing_is_done() {
             asyncService.doSomethingAsync();
 
@@ -32,7 +31,7 @@ class AsyncServiceTest {
          * This test is less likely to flake because we've introduced a fixed sleep.
          * Fine here because we *know* the maximum wait of the async code, but in
          * the real world this won't always be possible.
-         *
+         * <p>
          * Also, it can add a lot of unnecessary waiting to your tests.
          */
         @Test

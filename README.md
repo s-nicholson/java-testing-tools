@@ -8,6 +8,13 @@ _Disclaimer: I am in no way an expert, this whole project was just a playground 
 
 Latest and greatest Java testing with lots of nifty features.
 
+e.g.
+- `@Nested` - divide big test classes up to give more structure,
+- `@ParameterizedTest` - reduce duplicated test setup,
+- `@DisplayName` - handy to make test output more readable,
+
+Used throughout, but particularly [the `junit` package](./src/test/java/com/example/testing/junit).
+
 ### [Mockito](https://github.com/mockito/mockito)
 
 Standard mocking library for easy test doubles.
