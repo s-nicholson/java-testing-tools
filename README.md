@@ -59,7 +59,7 @@ See [the `db` package](./src/test/java/com/example/testing/db).
 
 Containers for your dependencies so you can run real services in your integration tests.
 
-Also in [the `db` package](./src/test/java/com/example/testing/db) (but you can do much more with it).
+See [the `testcontainers` package](./src/test/java/com/example/testing/testcontainers) and also [the `db` package](./src/test/java/com/example/testing/db).
 
 ### [JaCoCo](https://www.eclemma.org/jacoco/)
 

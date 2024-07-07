@@ -56,8 +56,7 @@ class AsyncServiceTest {
         void async_thing_is_done() {
             asyncService.doSomethingAsync();
 
-            await().pollInSameThread()
-                    .atMost(Duration.ofSeconds(10L))
+            await().atMost(Duration.ofSeconds(10L))
                     .pollInterval(Duration.ofSeconds(1L))
                     .pollDelay(Duration.ofSeconds(1L))
                     .ignoreExceptions()
