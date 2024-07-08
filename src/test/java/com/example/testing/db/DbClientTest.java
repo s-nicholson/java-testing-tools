@@ -2,6 +2,7 @@ package com.example.testing.db;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.testcontainers.containers.JdbcDatabaseContainer;
 import org.testcontainers.containers.PostgreSQLContainer;
@@ -43,6 +44,7 @@ class DbClientTest {
      * test against the real thing.
      */
     @Nested
+    @Tag("testcontainers")
     class WithTestContainers {
         private static JdbcDatabaseContainer postgreSQLContainer;
         @BeforeAll

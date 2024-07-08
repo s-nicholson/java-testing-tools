@@ -2,6 +2,29 @@
 
 _Disclaimer: I am in no way an expert, this whole project was just a playground for me while I was waiting on onboarding nonsense._
 
+## Running
+
+You can run all the _passing_ tests via `gradle clean check`.
+
+Some tests will not run for this task:
+
+- Tests which are intended to fail are exlcluded by JUnit Tags - you can run these using `gradle clean alltests`,
+- The `pitest` tests are disabled by default, you can enable them by uncommenting the following line in `build.gradle`:
+  ```
+  //check.dependsOn 'pitest'
+  ```
+
+### Docker
+
+You'll need a valid docker environment to run the `testcontainers` tests.
+
+I'd recommend [`colima` if you're on a mac](https://github.com/abiosoft/colima).
+
+You may also need to run this to make your colima setup accessible:
+```shell
+sudo ln -s $HOME/.colima/docker.sock /var/run/docker.sock
+```
+
 ## Tools
 
 ### [JUnit 5](https://junit.org/junit5/)
@@ -12,6 +35,7 @@ e.g.
 - `@Nested` - divide big test classes up to give more structure,
 - `@ParameterizedTest` - reduce duplicated test setup,
 - `@DisplayName` - handy to make test output more readable,
+- `@Tag` - nice way of classifying tests, you can plug this into your build tool to run categories of tests (or avoid running them).
 
 Used throughout, but particularly [the `junit` package](./src/test/java/com/example/testing/junit).
 
@@ -25,11 +49,7 @@ See [the `mocking` package](./src/test/java/com/example/testing/mocking).
 
 More fluid assertions.
 
-e.g.
-```java
-assertThat(x).isEqualTo(y);
-assertThat(list).contains("a", "b", "c");
-```
+Used throughout, but particularly [the `assertj` package](./src/test/java/com/example/testing/assertj).
 
 ### [Awaitlity](https://github.com/awaitility/awaitility)
 

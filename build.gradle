@@ -44,6 +44,14 @@ dependencies {
 }
 
 test {
+    useJUnitPlatform {
+        excludeTags 'failing', 'testcontainers'
+    }
+
+    finalizedBy jacocoTestReport
+}
+
+task alltests(type: Test) {
     useJUnitPlatform()
 
     finalizedBy jacocoTestReport

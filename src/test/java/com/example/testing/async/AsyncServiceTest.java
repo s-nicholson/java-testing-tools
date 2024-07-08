@@ -3,6 +3,7 @@ package com.example.testing.async;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
@@ -19,8 +20,8 @@ class AsyncServiceTest {
          * This test is flakey because it asserts on the result of some async
          * processing, sometimes it might pass and other times it will fail.
          */
-        @Disabled
         @Test
+        @Tag("failing")
         void async_thing_is_done() {
             asyncService.doSomethingAsync();
 
